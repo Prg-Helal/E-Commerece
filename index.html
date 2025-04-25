@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusShop - Premium E-Commerce</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Language Switch -->
+    <div class="language-switch">
+        <button id="lang-en" class="active">EN</button>
+        <button id="lang-ar">AR</button>
+    </div>
+
+    <!-- Theme Switch -->
+    <div class="theme-switch">
+        <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky-header">
+        <div class="user-actions">
+            <button class="navbar-toggler" id="navbar-toggler" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <button id="cart-btn"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></button>
+            <button id="login-btn" class="responsive-login"><i class="fas fa-user"></i><span class="login-text" data-translate="login">تسجيل الدخول</span></button>
+        </div>
+        <div class="logo-container" style="cursor: pointer;">
+            <div class="logo-animation">
+                <span class="logo-part" data-translate="shop">Shop</span>
+                <span class="logo-part" data-translate="nexus">Nexus</span>
+            </div>
+        </div>
+        <nav class="navbar-collapse" id="navbar-collapse">
+            <div class="search-container">
+                <input type="text" id="search-input" data-translate-placeholder="searchPlaceholder">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+                <div class="search-suggestions" id="search-suggestions"></div>
+            </div>
+            <div class="main-nav">
+                <ul>
+                    <li style="--link-index: 0;"><a href="#" class="nav-link" data-page="hero" data-translate="home">الرئيسية</a></li>
+                    <li style="--link-index: 1;"><a href="#" class="nav-link" data-page="categories" data-translate="categories">الفئات</a></li>
+                    <li style="--link-index: 2;"><a href="#" class="nav-link" data-page="products" data-translate="products">المنتجات</a></li>
+                    <li style="--link-index: 3;"><a href="#" class="nav-link" data-page="about" data-translate="about">حول</a></li>
+                    <li style="--link-index: 4;"><a href="#" class="nav-link" data-page="contact" data-translate="contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <h2 data-translate="login">Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email" data-translate="email">Email</label>
+                    <input type="email" id="login-email" placeholder="Enter your email" required data-translate-placeholder="emailPlaceholder">
+                </div>
+                <div class="form-group">
+                    <label for="login-password" data-translate="password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" required data-translate-placeholder="passwordPlaceholder">
+                </div>
+                <button type="submit" data-translate="login">Login</button>
+            </form>
+            <div class="sing-up-info">
+                <p data-translate="noAccount">Don't have an account?</p>
+                <a href="" data-translate="SignUp" id="show-signup"></a>    
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <h2 data-translate="signup">Create Account</h2>
+            <form id="signup-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="signup-firstname" data-translate="firstName">First Name</label>
+                        <input type="text" id="signup-firstname" placeholder="Enter your first name" required data-translate-placeholder="firstNamePlaceholder">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-lastname" data-translate="lastName">Last Name</label>
+                        <input type="text" id="signup-lastname" placeholder="Enter your last name" required data-translate-placeholder="lastNamePlaceholder">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email" data-translate="email">Email</label>
+                    <input type="email" id="signup-email" placeholder="Enter your email" required data-translate-placeholder="emailPlaceholder">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password" data-translate="password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Create a password" required data-translate-placeholder="passwordPlaceholder">
+                </div>
+                <div class="form-group">
+                    <label for="signup-repeat-password" data-translate="repeatPassword">Repeat Password</label>
+                    <input type="password" id="signup-repeat-password" placeholder required data-translate-placeholder="repeatPasswordPlaceholder">
+                </div>
+                <div class="form-group">
+                    <label for="signup-country" data-translate="country">Country</label>
+                    <select id="signup-country" required>
+                        <option value="" disabled selected data-translate="selectCountry">Select Country</option>
+                        <option value="US">United States</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="EG">Egypt</option>
+                        <option value="SA">Saudi Arabia</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="signup-address" data-translate="address">Address</label>
+                    <textarea id="signup-address" placeholder="Enter your address" required data-translate-placeholder="addressPlaceholder"></textarea>
+                </div>
+                <button type="submit" data-translate="signup">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero" data-page="hero">
+        <div class="hero-content">
+            <h1 class="hero-title" data-translate="heroTitle">Premium Tech Products</h1>
+            <p class="hero-subtitle" data-translate="heroSubtitle">Discover the latest gadgets with exclusive deals</p>
+            <button class="cta-button" data-translate="shopNow">Shop Now</button>
+        </div>
+        <div class="hero-particles" id="particles-js"></div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories" data-page="categories">
+        <h2 class="section-title" data-translate="ourCategories">Our Categories</h2>
+        <div class="category-grid" id="category-container"></div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products" id="products" data-page="products">
+        <div class="products-header">
+            <h2 class="section-title" data-translate="featuredProducts">Featured Products</h2>
+            <div class="filter-controls">
+                <select id="category-filter" class="filter-select">
+                    <option value="all" data-translate="allCategories">All Categories</option>
+                </select>
+                <select id="sort-by" class="filter-select">
+                    <option value="default" data-translate="defaultSort">Default</option>
+                    <option value="price-asc" data-translate="priceLowHigh">Price: Low to High</option>
+                    <option value="price-desc" data-translate="priceHighLow">Price: High to Low</option>
+                    <option value="name-asc" data-translate="nameAZ">Name: A-Z</option>
+                </select>
+            </div>
+        </div>
+        <div class="product-grid" id="product-container"></div>
+    </section>
+
+    <!-- About Us -->
+    <!-- About Us -->
+<section class="about" id="about" data-page="about">
+    <h2 class="section-title" data-translate="aboutTeam">About Our Team</h2>
+    <div class="about-content">
+        <p data-translate="aboutText">This e-commerce platform was developed as a university project by a dedicated team of 5 students from the Faculty of Computers and Artificial Intelligence.</p>
+        <div class="team-members">
+            <div class="member-card">
+                <div class="member-avatar">SM</div>
+                <h3>شرين محمود محمد </h3>
+                <p>رقم الجلوس 59521</p>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">AN</div>
+                <h3>آلاء بكر مهدي</h3>
+                <p>رقم الجلوس 59352</p>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">AM</div>
+                <h3>أمل ابراهيم نبوي</h3>
+                <p>رقم الجلوس 59383</p>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">MM</div>
+                <h3>محمد محمد احمد</h3>
+                <p>رقم الجلوس 60045</p>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">EK</div>
+                <h3>اسلام خالد عبد القادر</h3>
+                <p>رقم البطاقه 30310270200692 </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Us -->
+    <section class="contact" id="contact" data-page="contact">
+        <h2 class="section-title" data-translate="contactUs">Contact Us</h2>
+        <div class="contact-content">
+            <p data-translate="contactText">For any inquiries, please contact our team leader:</p>
+            <p><i class="fas fa-envelope"></i>sherienm940@gmail.com</p>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3 data-translate="yourCart">Your Cart</h3>
+            <button id="close-cart">×</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <p><span data-translate="items">Items:</span> <span id="cart-item-count">0</span></p>
+                <p><span data-translate="subtotal">Subtotal:</span> <span id="cart-subtotal">$0.00</span></p>
+            </div>
+            <div class="cart-total">
+                <span data-translate="total">Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button id="clear-cart-btn" data-translate="clearCart">Clear Cart</button>
+            <button id="checkout-btn" data-translate="checkout">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>    
+    <script src="js/translations.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
