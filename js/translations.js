@@ -10,6 +10,11 @@ const translations = {
         login: "Login",
         signup: "Sign Up",
 
+        aboutUs: "About Us",
+        aboutText: "NexusShop is your one-stop destination for quality products and exceptional service.",
+        quickLinks: "Quick Links",
+        messageSent: "Your message has been sent successfully!",
+        invalidEmail: "Invalid email",
         // Search
         searchPlaceholder: "Search products...",
 
@@ -35,6 +40,10 @@ const translations = {
         aboutText: "This e-commerce platform was developed as a university project by a dedicated team of 5 students. (انتظام)",
         teamLeader: "Team Leader",
 
+        nameRequired: "Name is required",
+        invalidEmail: "Invalid email",
+        messageRequired: "Message is required",
+        messageSent: "Your message has been sent successfully!",
         // Contact Section
         contactUs: "Contact Us",
         contactText: "For any inquiries, please contact our team leader:",
@@ -52,6 +61,9 @@ const translations = {
         cartCleared: "Cart cleared successfully!",
         checkoutMessage: "Checkout complete! Total:",
 
+
+        noResults: "No results found",
+        tryDifferentKeywords: "Try different keywords",
         // Login Modal
         email: "Email",
         password: "Password",
@@ -74,7 +86,42 @@ const translations = {
         selectCountry: "Select Country",
         addressPlaceholder: "Enter your address",
         accountCreated: "Account created successfully!",
-        passwordsNotMatch: "Passwords do not match!"
+        passwordsNotMatch: "Passwords do not match!",
+
+        name:"Name",
+        email:"Email",
+        message:"Message",
+        namePlaceholder:"Enter Your Name Here",
+        emailPlaceholder:"Enter Your Email Here",
+        messagePlaceholder:"Text Your Message Here",
+        sendMessage:"Send Message",
+
+        products: "Products",
+        addToCart: "Add to Cart",
+        cartCleared: "Cart cleared successfully",
+        cartEmpty: "Your cart is empty",
+        noResults: "No results found",
+        tryDifferentKeywords: "Try different keywords",
+        noProducts: "No products available",
+        productsComingSoon: "Products will be available soon",
+        fillAllFields: "Please fill all fields",
+        loginSuccess: "Login successful",
+        accountCreated: "Account created successfully",
+        passwordsNotMatch: "Passwords do not match",
+        addedToCart: "added to cart",
+        removedFromCart: "removed from cart",
+        checkoutMessage: "Proceeding to checkout with total",
+        allCategories: "All Categories",
+        defaultSort: "Default",
+        priceLowHigh: "Price: Low to High",
+        priceHighLow: "Price: High to Low",
+        nameAZ: "Name: A-Z",
+        addReview: "Add a Review",
+        ratingAdded: "Your rating has been added!",
+        reviews: "Reviews",
+        submitReview: "Submit Review",
+        yourRating: "Your Rating",
+        optionalComment: "Optional Comment"
     },
     ar: {
         // Navigation
@@ -86,6 +133,19 @@ const translations = {
         login: "تسجيل الدخول",
         signup: "إنشاء حساب",
 
+        aboutUs: "معلومات عنا",
+        aboutText: "نكسس شوب هي وجهتك للمنتجات عالية الجودة والخدمة المميزة.",
+        quickLinks: "روابط سريعة",
+        messageSent: "تم إرسال رسالتك بنجاح!",
+        invalidEmail: "البريد الإلكتروني غير صحيح",
+        
+        name:"الأسم",
+        email:"الأيميل",
+        message:"الرساله",
+        namePlaceholder:"ادخل اسمك هنا",
+        emailPlaceholder:"ادخل بريدك هنا",
+        messagePlaceholder:"ادخل رسالتك هنا",
+        sendMessage:"ارسال",
         // Search
         searchPlaceholder: "ابحث عن منتجات...",
 
@@ -94,6 +154,11 @@ const translations = {
         heroSubtitle: "اكتشف أحدث الأجهزة مع عروض حصرية",
         shopNow: "تسوق الآن",
 
+
+        nameRequired: "الاسم مطلوب",
+        invalidEmail: "البريد الإلكتروني غير صحيح",
+        messageRequired: "الرسالة مطلوبة",
+        messageSent: "تم إرسال رسالتك بنجاح!",
         // Categories Section
         ourCategories: "أقسامنا",
 
@@ -106,6 +171,34 @@ const translations = {
         nameAZ: "الاسم: من الألف إلى الياء",
         addToCart: "أضف إلى السلة",
 
+
+        //products
+        products: "المنتجات",
+        addToCart: "أضف إلى السلة",
+        cartCleared: "تم مسح السلة بنجاح",
+        cartEmpty: "سلتك فارغة",
+        noResults: "لم يتم العثور على نتائج",
+        tryDifferentKeywords: "جرب كلمات مختلفة",
+        noProducts: "لا توجد منتجات متاحة",
+        productsComingSoon: "المنتجات ستكون متاحة قريبًا",
+        fillAllFields: "يرجى ملء جميع الحقول",
+        loginSuccess: "تم تسجيل الدخول بنجاح",
+        accountCreated: "تم إنشاء الحساب بنجاح",
+        passwordsNotMatch: "كلمات المرور غير متطابقة",
+        addedToCart: "تمت الإضافة إلى السلة",
+        removedFromCart: "تمت الإزالة من السلة",
+        checkoutMessage: "جاري المتابعة للدفع بإجمالي",
+        allCategories: "جميع الفئات",
+        defaultSort: "الافتراضي",
+        priceLowHigh: "السعر: من الأقل إلى الأعلى",
+        priceHighLow: "السعر: من الأعلى إلى الأقل",
+        nameAZ: "الاسم: أ-ي",
+        addReview: "إضافة تقييم",
+        ratingAdded: "تم إضافة تقييمك بنجاح!",
+        reviews: "تقييمات",
+        submitReview: "إرسال التقييم",
+        yourRating: "تقييمك",
+        optionalComment: "تعليق اختياري",
         // About Section
         aboutTeam: "عن فريقنا",
         aboutText: "تم تطوير هذا المتجر الإلكتروني كمشروع جامعي بواسطة فريق مكون من 5 طلاب متفانين. (انتظام)",
@@ -115,6 +208,9 @@ const translations = {
         contactUs: "اتصل بنا",
         contactText: "لأي استفسارات، يرجى التواصل مع قائد الفريق:",
 
+
+        noResults: "لم يتم العثور على نتائج",
+        tryDifferentKeywords: "جرب كلمات بحث مختلفة",
         // Cart
         yourCart: "سلة التسوق",
         items: "العناصر:",

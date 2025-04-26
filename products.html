@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexusShop - Home</title>
+    <title>NexusShop - Products</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -44,9 +44,9 @@
             </div>
             <div class="main-nav">
                 <ul>
-                    <li style="--link-index: 0;"><a href="index.html" class="nav-link active" data-page="hero" data-translate="home">الرئيسية</a></li>
+                    <li style="--link-index: 0;"><a href="index.html" class="nav-link" data-page="hero" data-translate="home">الرئيسية</a></li>
                     <li style="--link-index: 1;"><a href="categories.html" class="nav-link" data-page="categories" data-translate="categories">الفئات</a></li>
-                    <li style="--link-index: 2;"><a href="products.html" class="nav-link" data-page="products" data-translate="products">المنتجات</a></li>
+                    <li style="--link-index: 2;"><a href="products.html" class="nav-link active" data-page="products" data-translate="products">المنتجات</a></li>
                     <li style="--link-index: 3;"><a href="about.html" class="nav-link" data-page="about" data-translate="about">حول</a></li>
                     <li style="--link-index: 4;"><a href="contact.html" class="nav-link" data-page="contact" data-translate="contact">اتصل بنا</a></li>
                 </ul>
@@ -151,15 +151,25 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero" data-page="hero">
-        <div class="hero-content">
-            <h1 class="hero-title" data-translate="heroTitle">Premium Tech Products</h1>
-            <p class="hero-subtitle" data-translate="heroSubtitle">Discover the latest gadgets with exclusive deals</p>
-            <button class="cta-button" data-translate="shopNow">Shop Now</button>
+    <!-- Featured Products -->
+    <section class="featured-products" id="products" data-page="products">
+        <div class="products-header">
+            <h2 class="section-title" data-translate="featuredProducts">Featured Products</h2>
+            <div class="filter-controls">
+                <select id="category-filter" class="filter-select">
+                    <option value="all" data-translate="allCategories">All Categories</option>
+                </select>
+                <select id="sort-by" class="filter-select">
+                    <option value="default" data-translate="defaultSort">Default</option>
+                    <option value="price-asc" data-translate="priceLowHigh">Price: Low to High</option>
+                    <option value="price-desc" data-translate="priceHighLow">Price: High to Low</option>
+                    <option value="name-asc" data-translate="nameAZ">Name: A-Z</option>
+                </select>
+            </div>
         </div>
-        <div class="hero-particles" id="particles-js"></div>
+        <div class="product-grid" id="product-container"></div>
     </section>
+
 
     <!-- Shopping Cart Sidebar -->
     <div class="cart-sidebar" id="cart-sidebar">
@@ -185,7 +195,7 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>    
     <script src="js/translations.js"></script>
     <script src="js/products.js"></script>
-    <script src="js/script.js"></script>
-
+    <!-- <script src="js/script.js"></script> -->
+     <script src="./js/prodcutCheck.js"></script>
 </body>
 </html>
