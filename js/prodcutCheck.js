@@ -956,3 +956,26 @@ function toggleTheme() {
     const icon = themeToggle.querySelector('i');
     icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
 }
+function initNavbar() {
+    if (navbarToggler) {
+        navbarToggler.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            navbarCollapse.classList.toggle('show');
+            
+            // Toggle icon
+            const icon = this.querySelector('i');
+            icon.className = isExpanded ? 'fas fa-bars' : 'fas fa-times';
+            
+            // Prevent scrolling when menu is open
+            document.body.style.overflow = !isExpanded ? 'hidden' : '';
+        });
+    }
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!navbarCollapse.contains(e.target) && !navbarToggler.contains(e.target)) {
+            closeMobileNav();
+        }
+    });
+}
